@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Joki Pro | Jasa Rank Mobile Legend Terpercaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #FF5722;
+      --primary-dark: #E64A19;
+      --secondary: #FFC107;
+      --accent: #4CAF50;
+      --dark: #212121;
+      --light: #f5f5f5;
+      --gradient-orange: linear-gradient(135deg, #FF5722 0%, #FF9800 100%);
+      --gradient-gold: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Header Hero */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('img/vexana.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-orange);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      width: 100%;
+      padding: 1.5rem 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      padding: 1rem 0;
+      background: var(--dark);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+     padding: 3rem 1rem;
+     background: #f9f9f9;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid #eee;
+      flex: 1 1 calc(33.333% - 20px); /* 3 per baris dengan gap */
+      box-sizing: border-box;
+      min-width: 250px;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      border-color: var(--primary);
+    }
+
+    .pricing-card.popular {
+      border-color: var(--primary);
+      position: relative;
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      background: var(--gradient-orange);
+      color: white;
+      padding: 0.3rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .features li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #eee;
+      color: #555;
+    }
+
+    .features li:last-child {
+      border-bottom: none;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gradient-orange);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255,87,34,0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255,87,34,0.4);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 6rem 0;
+      background: #f9f9f9;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1rem;
+      border: 3px solid var(--primary);
+    }
+
+    .author-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .author-info p {
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .rating {
+      color: var(--secondary);
+      margin-top: 0.3rem;
+    }
+
+    /* CTA Section */
+    .cta {
+      padding: 6rem 0;
+      background: var(--gradient-orange);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+    }
+
+    .footer-col p {
+      color: #bbb;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 3rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+    }
+.mythichnr-bg * {
+  position: relative;
+  z-index: 1;
+}
+.mythichnr-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mythichnr-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/honor.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* dinaikkan agar terlihat */
+  filter: blur(2px) brightness(1.1);
+  z-index: 0;
+}
+.mythic-bg * {
+  position: relative;
+  z-index: 1;
+}
+.mythic-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mythic-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/mitik.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* dinaikkan agar terlihat */
+  filter: blur(2px) brightness(1.1);
+  z-index: 0;
+}
+
+.mythicimo-bg * {
+  position: relative;
+  z-index: 1;
+}
+.mythicimo-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mythicimo-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/imo.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* dinaikkan agar terlihat */
+  filter: blur(2px) brightness(1.1);
+  z-index: 0;
+}
+
+.mythicimo-bg * {
+  position: relative;
+  z-index: 1;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Annn<span>Joki</a>
+      <ul class="nav-links">
+        <li><a href="#pricing">Harga</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+  <h1>Joki Rank Mobile Legend</h1>
+  <p>Naik rank dengan cepat dan aman bersama jasa joki profesional kami</p>
+  <a href="#pricing" class="btn">Lihat Paket</a>
+</section>
+
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <div class="section-title">
+      <h2>Paket Joki Rank</h2>
+      <p>Pilih paket sesuai kebutuhan rank Anda</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Master</h3>
+        <div class="price">Rp3.900 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Grand Master</h3>
+        <div class="price">Rp4.900 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="pricing-card popular">
+        <div class="popular-badge">POPULAR</div>
+        <h3>Epic</h3>
+        <div class="price">Rp6.900 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Legend</h3>
+        <div class="price">Rp7.500 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+    <div class="pricing-card">
+        <h3>Mythic</h3>
+        <div class="price">Rp11.500 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="pricing-card">
+        <div class="popular-badge">POPULAR</div>
+        <h3>Mythic Honor</h3>
+        <div class="price">Rp13.100 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Mythic Glory</h3>
+        <div class="price">Rp19.000 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Mythic Immortal</h3>
+        <div class="price">Rp25.000 <span>/Star</span></div>
+        <ul class="features">
+          <li>Winrate 95%+</li>
+          <li>Req Hero</li>
+          <li>Garansi</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="https://wa.me/6285894147764" class="btn">Pesan Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-title">
+      <h2>Testimoni Klien</h2>
+      <p>Apa kata mereka tentang layanan kami</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">"Proses cepat dan hasil memuaskan! Dari Epic ke Legend hanya 3 hari dengan winrate tinggi. Recommended banget!"</p>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="author-img">
+          <div class="author-info">
+            <h4>Abid Abidin</h4>
+            <p>Mahasiswa</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"Awalnya ragu pakai jasa joki, tapi setelah coba ternyata aman dan terpercaya. Akun tidak pernah bermasalah."</p>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="author-img">
+          <div class="author-info">
+            <h4>Abida Abidani</h4>
+            <p>Karyawan</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"Harga terjangkau untuk kualitas pro player. Mythic akhirnya tercapai tanpa harus stres main rank sendiri."</p>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="author-img">
+          <div class="author-info">
+            <h4>Abid Wijaya</h4>
+            <p>Freelancer</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h2>Siap Naik Rank?</h2>
+    <p>Hubungi kami sekarang dan dapatkan rank impian Anda</p>
+    <a href="https://wa.me/6285894147764" class="btn" style="background: white; color: var(--primary);">Chat WhatsApp</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>AnnnJoki</h3>
+        <p>Layanan joki rank Mobile Legend profesional dengan jaminan keamanan dan kepuasan pelanggan.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Layanan</h3>
+        <ul class="footer-links">
+          <li><a href="#">Joki Rank</a></li>
+          <li><a href="#">Joki Classic</a></li>
+          <li><a href="#">Joki MCL</a></li>
+          <li><a href="#">Jasa Star</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Informasi</h3>
+        <ul class="footer-links">
+          <li><a href="#">Syarat & Ketentuan</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Cara Order</a></li>
+          <li><a href="#">Pembayaran</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Kontak</h3>
+        <p><i class="fas fa-phone-alt"></i> 0858-9414-7764</p>
+        <p><i class="fas fa-envelope"></i> mljoki@example.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Kota Anda, Indonesia</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2023 AnnnJoki. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
