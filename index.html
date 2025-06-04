@@ -414,71 +414,54 @@
         font-size: 2.2rem;
       }
     }
-.mythichnr-bg * {
-  position: relative;
-  z-index: 1;
-}
-.mythichnr-bg {
-  position: relative;
-  overflow: hidden;
+.order-format {
+  padding: 60px 20px;
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
 }
 
-.mythichnr-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('img/honor.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3; /* dinaikkan agar terlihat */
-  filter: blur(2px) brightness(1.1);
-  z-index: 0;
-}
-.mythic-bg * {
-  position: relative;
-  z-index: 1;
-}
-.mythic-bg {
-  position: relative;
-  overflow: hidden;
+.order-format .section-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #ffd700;
 }
 
-.mythic-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('img/mitik.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3; /* dinaikkan agar terlihat */
-  filter: blur(2px) brightness(1.1);
-  z-index: 0;
+.order-format .section-description {
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 
-.mythicimo-bg * {
-  position: relative;
-  z-index: 1;
-}
-.mythicimo-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.mythicimo-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('img/imo.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3; /* dinaikkan agar terlihat */
-  filter: blur(2px) brightness(1.1);
-  z-index: 0;
+.format-box {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
 }
 
-.mythicimo-bg * {
-  position: relative;
-  z-index: 1;
+.format-box pre {
+  text-align: left;
+  color: #fff;
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+
+.order-format .btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ffd700;
+  color: #000;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.order-format .btn:hover {
+  background-color: #e6c200;
 }
 
 
@@ -607,6 +590,23 @@ Capai Mythic dalam waktu singkat dengan tim joki profesional kami. Aman, cepat, 
       </div>
     </div>
   </section>
+<section class="order-format" id="order-format">
+  <div class="container">
+    <h2 class="section-title">Format Pembelian</h2>
+    <p class="section-description">Silakan kirim format berikut saat memesan melalui WhatsApp:</p>
+    <div class="format-box">
+      <pre>
+📱 Nickname ML: [Nama In-Game]
+🆔 ID + Server: [Contoh: 12345678 (1234)]
+🎯 Rank Saat Ini: [Contoh: Epic V]
+🚀 Target Rank: [Contoh: Mythic Honor]
+💳 Metode Pembayaran: [Dana / OVO / Gopay / Transfer]
+📦 Paket: [Contoh: Mythic 10⭐]
+      </pre>
+      <a href="https://wa.me/6285894147764?text=Halo%20kak%2C%20saya%20ingin%20order%20jasa%20joki%20rank%20ML%20dengan%20format%20berikut%3A%0A%F0%9F%93%B1%20Nickname%20ML%3A%20%0A%F0%9F%86%94%20ID%20%2B%20Server%3A%20%0A%F0%9F%8E%AF%20Rank%20Saat%20Ini%3A%20%0A%F0%9F%9A%80%20Target%20Rank%3A%20%0A%F0%9F%92%B3%20Metode%20Pembayaran%3A%20%0A%F0%9F%93%A6%20Paket%3A" class="btn">Kirim via WhatsApp</a>
+    </div>
+  </div>
+</section>
 
   <!-- Testimonials -->
   <section id="testimonials" class="testimonials">
@@ -640,6 +640,7 @@ Capai Mythic dalam waktu singkat dengan tim joki profesional kami. Aman, cepat, 
             <h4>Abida Abidani</h4>
             <p>Karyawan</p>
             <div class="rating">
+              <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
