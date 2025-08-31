@@ -1,827 +1,691 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ML Joki Pro | Jasa Rank Mobile Legend Terpercaya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #FF5722;
-      --primary-dark: #E64A19;
-      --secondary: #FFC107;
-      --accent: #4CAF50;
-      --dark: #212121;
-      --darks:rgb(48, 48, 48);
-      --light: #f5f5f5;
-      --gradient-orange: linear-gradient(135deg, #FF5722 0%, #FF9800 100%);
-      --gradient-gold: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--dark);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    /* Header Hero */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                  url('img/vexana.jpg') no-repeat center center/cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      background: var(--gradient-orange);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      width: 100%;
-      padding: 1.5rem 0;
-      background: rgba(0,0,0,0.9);
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-
-    nav.scrolled {
-      padding: 1rem 0;
-      background: var(--dark);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 30px;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      text-decoration: none;
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-    }
-
-    .nav-links li {
-      margin-left: 2rem;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Pricing Section */
-    .pricing-section {
-     padding: 3rem 1rem;
-     background:rgb(255, 255, 255);
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-title h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color:rgb(255, 251, 0);
-    }
-
-    .section-title p {
-      color:rgb(255, 255, 255);;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .pricing-card {
-      background: rgb(233, 213, 213);
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      padding: 2.5rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 2px solid #eee;
-      flex: 1 1 calc(33.333% - 20px); /* 3 per baris dengan gap */
-      box-sizing: border-box;
-      min-width: 250px;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      border-color: var(--primary);
-    }
-
-    .pricing-card.popular {
-      border-color: var(--primary);
-      position: relative;
-    }
-
-    .popular-badge {
-      position: absolute;
-      top: -15px;
-      right: 20px;
-      background: var(--gradient-orange);
-      color: white;
-      padding: 0.3rem 1.5rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .pricing-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--dark);
-    }
-
-    .price {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-
-    .price span {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .features li {
-      padding: 0.8rem 0;
-      border-bottom: 1px solid #eee;
-      color: #555;
-    }
-
-    .features li:last-child {
-      border-bottom: none;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--gradient-orange);
-      color: rgb(0, 0, 0);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgb(255, 255, 255);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgb(255, 255, 255);
-    }
-
-    /* Testimonials */
-    .testimonials {
-      padding: 6rem 0;
-      background:rgb(59, 58, 58);
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .testimonial-card {
-      background: dark;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(217, 255, 0, 0.2);
-    }
-
-    .testimonial-text {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      color:rgb(255, 251, 0);
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      color:rgb(255, 251, 0);
-    }
-
-    .author-img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 1rem;
-      border: 3px solid var(--primary);
-    }
-
-    .author-info h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .author-info p {
-      color: #f5f5f5;
-      font-size: 0.9rem;
-    }
-
-    .rating {
-      color: var(--secondary);
-      margin-top: 0.3rem;
-    }
-
-    /* CTA Section */
-    .cta {
-      padding: 6rem 0;
-      background: var(--darks);
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta p {
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      font-size: 1.2rem;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 4rem 0 2rem;
-    }
-
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .footer-col h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-
-    .footer-col h3::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background: var(--primary);
-    }
-
-    .footer-col p {
-      color: #bbb;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 1rem;
-    }
-
-    .footer-links a {
-      color: #bbb;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary);
-      padding-left: 5px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-links a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-5px);
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 3rem;
-      margin-top: 3rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-      }
-
-      .section-title h2 {
-        font-size: 2.2rem;
-      }
-    }
-.order-format {
-  padding: 60px 20px;
-  background: #1f1f1f;
-  color: #fff;
-  text-align: center;
-}
-
-.order-format .section-title {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #ffd700;
-}
-
-.order-format .section-description {
-  font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.format-box {
-  background-color: #2a2a2a;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-}
-
-.format-box pre {
-  text-align: left;
-  color: #fff;
-  white-space: pre-wrap;
-  font-size: 16px;
-}
-
-.order-format .btn {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 12px 24px;
-  background-color:rgb(255, 255, 255);
-  color: #000;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.order-format .btn:hover {
-  background-color: #e6c200;
-}
-
-.why-choose-us {
-  padding: 60px 20px;
-  background:rgb(44, 43, 43);
-  color: #fff;
-  text-align: center;
-}
-
-.why-choose-us .section-title {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #ffd700;
-}
-
-.why-choose-us .section-description {
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-
-.reasons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.reason-box {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.reason-box:hover {
-  transform: translateY(-5px);
-}
-
-.reason-box h3 {
-  color: #ffd700;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.reason-box p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.online {
+            background: #10b981;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sensor-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .sensor-status {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .status-active {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid #10b981;
+        }
+
+        .status-inactive {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+        }
+
+        .control-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .control-button.on {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .control-button.off {
+            background: linear-gradient(135deg, #6b7280, #4b5563);
+            color: white;
+            box-shadow: 0 4px 15px rgba(107, 114, 128, 0.4);
+        }
+
+        .control-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .log-container {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            color: #e5e7eb;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .log-entry.info { border-left: 3px solid #3b82f6; }
+        .log-entry.success { border-left: 3px solid #10b981; }
+        .log-entry.warning { border-left: 3px solid #f59e0b; }
+        .log-entry.error { border-left: 3px solid #ef4444; }
+
+        .connection-config {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            color: white;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .connect-button {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .connect-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .energy-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .energy-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #fbbf24, #ef4444);
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo">Annn<span>Joki</a>
-      <ul class="nav-links">
-        <li><a href="#pricing">Harga</a></li>
-        <li><a href="#testimonials">Testimoni</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-  <h1>Joki Rank Mobile Legend</h1>
-  <p>"Naik Rank Tanpa Stress! 💥"
-Capai Mythic dalam waktu singkat dengan tim joki profesional kami. Aman, cepat, dan terpercaya 100%.
-🎮 Order sekarang & dapatkan bonus skin gratis!</p>
-  <a href="#pricing" class="btn">Lihat Paket</a>
-</section>
-
-<section class="why-choose-us" id="why-choose-us">
-  <div class="container">
-    <h2 class="section-title">Kenapa Joki di Sini?</h2>
-    <p class="section-description">Kami memberikan layanan terbaik untuk kebutuhan push rank kamu!</p>
-    
-    <div class="reasons-grid">
-      <div class="reason-box">
-        <h3>🔥 Pro Player Berpengalaman</h3>
-        <p>Dikerjakan oleh pemain top yang sudah terbukti mampu mencapai tier tertinggi seperti Mythic Immortal.</p>
-      </div>
-      <div class="reason-box">
-        <h3>🔒 Aman dan Terpercaya</h3>
-        <p>Privasi akun kamu dijaga. Tidak menggunakan cheat atau hal ilegal lainnya.</p>
-      </div>
-      <div class="reason-box">
-        <h3>⚡ Proses Cepat</h3>
-        <p>Order kamu langsung dikerjakan setelah pembayaran, tanpa antre lama.</p>
-      </div>
-      <div class="reason-box">
-        <h3>📞 Support 24 Jam</h3>
-        <p>Kami siap membantu jika ada pertanyaan atau kendala selama proses joki berlangsung.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Pricing Section -->
-  <section id="pricing" class="pricing">
-    <div class="section-title">
-      <h2>Paket Joki Rank</h2>
-      <p>Pilih paket sesuai kebutuhan rank Anda</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Master</h3>
-        <div class="price">Rp3.900 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Grand Master</h3>
-        <div class="price">Rp4.900 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-      <div class="pricing-card popular">
-        <div class="popular-badge">POPULAR</div>
-        <h3>Epic</h3>
-        <div class="price">Rp6.900 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Legend</h3>
-        <div class="price">Rp7.500 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-    <div class="pricing-card">
-        <h3>Mythic</h3>
-        <div class="price">Rp11.500 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-      <div class="pricing-card popular">
-        <div class="popular-badge">POPULAR</div>
-        <h3>Mythic Honor</h3>
-        <div class="price">Rp13.100 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Mythic Glory</h3>
-        <div class="price">Rp19.000 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Mythic Immortal</h3>
-        <div class="price">Rp25.000 <span>/Star</span></div>
-        <ul class="features">
-          <li>Winrate 95%+</li>
-          <li>Req Hero</li>
-          <li>Garansi</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#order-format" class="btn">Pesan Sekarang</a>
-      </div>
-    </div>
-  </section>
-<section class="order-format" id="order-format">
-  <div class="container">
-    <h2 class="section-title">Format Pembelian</h2>
-    <p class="section-description">Silakan kirim format berikut saat memesan melalui WhatsApp:</p>
-    <div class="format-box">
-      <pre>
-📱 Nickname ML: [Nama In-Game]
-🆔 ID + Server: [Contoh: 12345678 (1234)]
-🎯 Rank Saat Ini: [Contoh: Epic V]
-🚀 Target Rank: [Contoh: Mythic Honor]
-💳 Metode Pembayaran: [Dana / OVO / Gopay / Transfer]
-📦 Paket: [Contoh: Mythic 10⭐]
-      </pre>
-      <a href="https://wa.me/6285894147764?text=Halo%20kak%2C%20saya%20ingin%20order%20jasa%20joki%20rank%20ML%20dengan%20format%20berikut%3A%0A%F0%9F%93%B1%20Nickname%20ML%3A%20%0A%F0%9F%86%94%20ID%20%2B%20Server%3A%20%0A%F0%9F%8E%AF%20Rank%20Saat%20Ini%3A%20%0A%F0%9F%9A%80%20Target%20Rank%3A%20%0A%F0%9F%92%B3%20Metode%20Pembayaran%3A%20%0A%F0%9F%93%A6%20Paket%3A" class="btn">Kirim via WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="testimonials">
-    <div class="section-title">
-      <h2>Testimoni Klien</h2>
-      <p>Apa kata mereka tentang layanan kami</p>
-    </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <p class="testimonial-text">"Proses cepat dan hasil memuaskan! Dari Epic ke Legend hanya 3 hari dengan winrate tinggi. Recommended banget!"</p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="author-img">
-          <div class="author-info">
-            <h4>Abid Abidin</h4>
-            <p>Mahasiswa</p>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Smart Home Dashboard</h1>
+            <div class="status-indicator">
+                <div class="status-dot" id="connectionStatus"></div>
+                <span id="connectionText">Disconnected</span>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-text">"Awalnya ragu pakai jasa joki, tapi setelah coba ternyata aman dan terpercaya. Akun tidak pernah bermasalah."</p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="author-img">
-          <div class="author-info">
-            <h4>Abida Abidani</h4>
-            <p>Karyawan</p>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+
+        <div class="connection-config">
+            <h3 style="color: white; margin-bottom: 15px;">🔗 Koneksi ESP32</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 15px; align-items: end;">
+                <div class="input-group">
+                    <label for="espIP">IP Address ESP32:</label>
+                    <input type="text" id="espIP" placeholder="192.168.1.100" value="192.168.1.100">
+                </div>
+                <div class="input-group">
+                    <label for="espPort">Port:</label>
+                    <input type="text" id="espPort" placeholder="80" value="80">
+                </div>
+                <button class="connect-button" onclick="connectToESP32()">Connect</button>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-text">"Harga terjangkau untuk kualitas pro player. Mythic akhirnya tercapai tanpa harus stres main rank sendiri."</p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="author-img">
-          <div class="author-info">
-            <h4>Abid Wijaya</h4>
-            <p>Freelancer</p>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+
+        <div class="dashboard-grid">
+            <!-- Kontrol Lampu -->
+            <div class="card">
+                <div class="card-title">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z"/>
+                    </svg>
+                    Kontrol Lampu
+                </div>
+                <div class="sensor-status" id="lampuStatus">OFF</div>
+                <button class="control-button off" id="lampuButton" onclick="toggleLampu()">
+                    NYALAKAN LAMPU
+                </button>
             </div>
-          </div>
+
+            <!-- Manual Override -->
+            <div class="card">
+                <div class="card-title">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Manual Override
+                </div>
+                <div class="sensor-status" id="overrideStatus">NONAKTIF</div>
+                <button class="control-button off" id="overrideButton" onclick="toggleOverride()">
+                    AKTIFKAN OVERRIDE
+                </button>
+            </div>
+
+            <!-- Sensor PIR -->
+            <div class="card">
+                <div class="card-title">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m15.5-6.5l-4.24 4.24M7.76 16.76l-4.24 4.24m0-16.48l4.24 4.24m8.48 8.48l4.24 4.24"/>
+                    </svg>
+                    Sensor PIR
+                </div>
+                <div class="sensor-status" id="pirStatus">TIDAK TERDETEKSI</div>
+            </div>
+
+            <!-- Sensor MMWave -->
+            <div class="card">
+                <div class="card-title">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                        <circle cx="12" cy="9" r="2.5"/>
+                    </svg>
+                    Radar MMWave
+                </div>
+                <div class="sensor-status" id="mmwaveStatus">TIDAK TERDETEKSI</div>
+                <div style="color: rgba(255,255,255,0.8); margin-top: 10px;">
+                    Energy: <span id="energyValue">0</span>
+                </div>
+                <div class="energy-bar">
+                    <div class="energy-fill" id="energyBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Sensor LDR -->
+            <div class="card">
+                <div class="card-title">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    Sensor Cahaya (LDR)
+                </div>
+                <div class="sensor-value" id="ldrValue">0</div>
+                <div class="sensor-status" id="ldrStatus">TERANG</div>
+            </div>
+
+            <!-- Status WiFi -->
+            <div class="card">
+                <div class="card-title">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                    Status Sistem
+                </div>
+                <div style="color: white; line-height: 1.6;">
+                    <div>WiFi: <span id="wifiStatus">Disconnected</span></div>
+                    <div>IP: <span id="ipAddress">-</span></div>
+                    <div>Uptime: <span id="uptime">-</span></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section class="cta">
-    <h2>Siap Naik Rank?</h2>
-    <p>Hubungi kami sekarang dan dapatkan rank impian Anda</p>
-    <a href="https://wa.me/6285894147764" class="btn" style="background: primary; color: var(--light);">Chat WhatsApp</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h3>AnnnJoki</h3>
-        <p>Layanan joki rank Mobile Legend profesional dengan jaminan keamanan dan kepuasan pelanggan.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <!-- Log Activity -->
+        <div class="card">
+            <div class="card-title">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14,2 14,8 20,8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10,9 9,9 8,9"/>
+                </svg>
+                Log Aktivitas
+            </div>
+            <div class="log-container" id="logContainer">
+                <div class="log-entry info">Dashboard dimulai - Menunggu koneksi ESP32...</div>
+            </div>
         </div>
-      </div>
-      <div class="footer-col">
-        <h3>Layanan</h3>
-        <ul class="footer-links">
-          <li><a href="#">Joki Rank</a></li>
-          <li><a href="#">Joki Classic</a></li>
-          <li><a href="#">Joki MCL</a></li>
-          <li><a href="#">Jasa Star</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Informasi</h3>
-        <ul class="footer-links">
-          <li><a href="#">Syarat & Ketentuan</a></li>
-          <li><a href="#">Kebijakan Privasi</a></li>
-          <li><a href="#">Cara Order</a></li>
-          <li><a href="#">Pembayaran</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Kontak</h3>
-        <p><i class="fas fa-phone-alt"></i> 0858-9414-7764</p>
-        <p><i class="fas fa-envelope"></i> ff11210093@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Tasikmalaya, Jawa Barat, Indonesia</p>
-      </div>
     </div>
-    <div class="copyright">
-      &copy; 2023 AnnnJoki. All Rights Reserved.
-    </div>
-  </footer>
 
-  <script>
-    // Navbar Scroll Effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
+    <script>
+        // Variabel global
+        let esp32IP = '';
+        let esp32Port = '';
+        let isConnected = false;
+        let pollInterval;
+        let startTime = Date.now();
 
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
+        // Simulasi data untuk demo
+        let demoMode = true;
+        let demoData = {
+            lampuNyala: false,
+            manualOverride: false,
+            pir: false,
+            mmwave: false,
+            gelap: false,
+            ldrValue: 450,
+            energy: 25,
+            wifiConnected: true
+        };
+
+        // Inisialisasi
+        document.addEventListener('DOMContentLoaded', function() {
+            addLog('Dashboard dimulai - Mode demo aktif', 'info');
+            updateDashboard(demoData);
+            startDemoSimulation();
+        });
+
+        // Demo simulation
+        function startDemoSimulation() {
+            setInterval(() => {
+                // Simulasi perubahan sensor
+                demoData.pir = Math.random() > 0.8;
+                demoData.mmwave = Math.random() > 0.7;
+                demoData.ldrValue = Math.floor(Math.random() * 1000);
+                demoData.gelap = demoData.ldrValue > 900;
+                demoData.energy = Math.floor(Math.random() * 100);
+                
+                // Auto logic simulation
+                if (!demoData.manualOverride && demoData.pir && demoData.gelap && !demoData.lampuNyala) {
+                    demoData.lampuNyala = true;
+                    addLog('Lampu NYALA (PIR + LDR)', 'success');
+                }
+                
+                updateDashboard(demoData);
+            }, 2000);
         }
-      });
-    });
-  </script>
+
+        // Koneksi ke ESP32
+        async function connectToESP32() {
+            esp32IP = document.getElementById('espIP').value.trim();
+            esp32Port = document.getElementById('espPort').value.trim() || '80';
+            
+            if (!esp32IP) {
+                addLog('IP Address ESP32 harus diisi!', 'error');
+                return;
+            }
+
+            addLog(`Mencoba koneksi ke ${esp32IP}:${esp32Port}...`, 'info');
+            
+            // Test koneksi terlebih dahulu
+            try {
+                const testUrl = `http://${esp32IP}:${esp32Port}/ping`;
+                addLog(`Testing koneksi: ${testUrl}`, 'info');
+                
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
+                
+                const response = await fetch(testUrl, {
+                    method: 'GET',
+                    mode: 'cors',
+                    signal: controller.signal,
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (response.ok) {
+                    addLog('✅ Test koneksi berhasil', 'success');
+                    demoMode = false;
+                    startPolling();
+                } else {
+                    addLog(`❌ HTTP Error: ${response.status} - ${response.statusText}`, 'error');
+                    addLog('Pastikan ESP32 sudah running dan web server aktif', 'warning');
+                }
+                
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    addLog('❌ Koneksi timeout (5 detik)', 'error');
+                } else {
+                    addLog(`❌ Error koneksi: ${error.message}`, 'error');
+                }
+                addLog('💡 Tips: Pastikan ESP32 dan dashboard di network yang sama', 'warning');
+                addLog('💡 Coba akses http://' + esp32IP + ':' + esp32Port + ' di browser', 'info');
+            }
+        }
+
+        // Polling data dari ESP32
+        function startPolling() {
+            if (pollInterval) clearInterval(pollInterval);
+            
+            pollInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`http://${esp32IP}:${esp32Port}/status`);
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        updateDashboard(data);
+                        
+                        if (!isConnected) {
+                            isConnected = true;
+                            updateConnectionStatus(true);
+                            addLog('Terhubung ke ESP32', 'success');
+                        }
+                    } else {
+                        throw new Error('HTTP Error: ' + response.status);
+                    }
+                } catch (error) {
+                    if (isConnected) {
+                        isConnected = false;
+                        updateConnectionStatus(false);
+                        addLog('Koneksi ke ESP32 terputus: ' + error.message, 'error');
+                    }
+                }
+            }, 1000);
+        }
+
+        // Update status koneksi
+        function updateConnectionStatus(connected) {
+            const statusDot = document.getElementById('connectionStatus');
+            const statusText = document.getElementById('connectionText');
+            
+            if (connected) {
+                statusDot.classList.add('online');
+                statusText.textContent = 'Connected';
+            } else {
+                statusDot.classList.remove('online');
+                statusText.textContent = 'Disconnected';
+            }
+        }
+
+        // Update dashboard
+        function updateDashboard(data) {
+            // Update lampu
+            const lampuStatus = document.getElementById('lampuStatus');
+            const lampuButton = document.getElementById('lampuButton');
+            
+            if (data.lampuNyala) {
+                lampuStatus.textContent = 'NYALA';
+                lampuStatus.className = 'sensor-status status-active';
+                lampuButton.textContent = 'MATIKAN LAMPU';
+                lampuButton.className = 'control-button on';
+            } else {
+                lampuStatus.textContent = 'MATI';
+                lampuStatus.className = 'sensor-status status-inactive';
+                lampuButton.textContent = 'NYALAKAN LAMPU';
+                lampuButton.className = 'control-button off';
+            }
+
+            // Update override
+            const overrideStatus = document.getElementById('overrideStatus');
+            const overrideButton = document.getElementById('overrideButton');
+            
+            if (data.manualOverride) {
+                overrideStatus.textContent = 'AKTIF';
+                overrideStatus.className = 'sensor-status status-active';
+                overrideButton.textContent = 'NONAKTIFKAN OVERRIDE';
+                overrideButton.className = 'control-button on';
+            } else {
+                overrideStatus.textContent = 'NONAKTIF';
+                overrideStatus.className = 'sensor-status status-inactive';
+                overrideButton.textContent = 'AKTIFKAN OVERRIDE';
+                overrideButton.className = 'control-button off';
+            }
+
+            // Update PIR
+            const pirStatus = document.getElementById('pirStatus');
+            if (data.pir) {
+                pirStatus.textContent = 'GERAKAN TERDETEKSI';
+                pirStatus.className = 'sensor-status status-active';
+            } else {
+                pirStatus.textContent = 'TIDAK TERDETEKSI';
+                pirStatus.className = 'sensor-status status-inactive';
+            }
+
+            // Update MMWave
+            const mmwaveStatus = document.getElementById('mmwaveStatus');
+            if (data.mmwave) {
+                mmwaveStatus.textContent = 'OBJEK TERDETEKSI';
+                mmwaveStatus.className = 'sensor-status status-active';
+            } else {
+                mmwaveStatus.textContent = 'TIDAK TERDETEKSI';
+                mmwaveStatus.className = 'sensor-status status-inactive';
+            }
+
+            // Update energy
+            document.getElementById('energyValue').textContent = data.energy || 0;
+            const energyPercentage = Math.min((data.energy || 0) / 100 * 100, 100);
+            document.getElementById('energyBar').style.width = energyPercentage + '%';
+
+            // Update LDR
+            document.getElementById('ldrValue').textContent = data.ldrValue || 0;
+            const ldrStatus = document.getElementById('ldrStatus');
+            if (data.gelap) {
+                ldrStatus.textContent = 'GELAP';
+                ldrStatus.className = 'sensor-status status-active';
+            } else {
+                ldrStatus.textContent = 'TERANG';
+                ldrStatus.className = 'sensor-status status-inactive';
+            }
+
+            // Update sistem info
+            document.getElementById('wifiStatus').textContent = data.wifiConnected ? 'Connected' : 'Disconnected';
+            document.getElementById('ipAddress').textContent = esp32IP || 'Demo Mode';
+            
+            // Update uptime
+            const uptimeMinutes = Math.floor((Date.now() - startTime) / 60000);
+            document.getElementById('uptime').textContent = `${uptimeMinutes} menit`;
+        }
+
+        // Toggle lampu
+        async function toggleLampu() {
+            if (demoMode) {
+                demoData.lampuNyala = !demoData.lampuNyala;
+                addLog(`Lampu ${demoData.lampuNyala ? 'NYALA' : 'MATI'} (Demo)`, 'info');
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://${esp32IP}:${esp32Port}/toggle/lampu`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    addLog('Perintah toggle lampu dikirim', 'success');
+                } else {
+                    addLog('Gagal mengirim perintah lampu', 'error');
+                }
+            } catch (error) {
+                addLog('Error toggle lampu: ' + error.message, 'error');
+            }
+        }
+
+        // Toggle override
+        async function toggleOverride() {
+            if (demoMode) {
+                demoData.manualOverride = !demoData.manualOverride;
+                addLog(`Override ${demoData.manualOverride ? 'AKTIF' : 'NONAKTIF'} (Demo)`, 'info');
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://${esp32IP}:${esp32Port}/toggle/override`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    addLog('Perintah toggle override dikirim', 'success');
+                } else {
+                    addLog('Gagal mengirim perintah override', 'error');
+                }
+            } catch (error) {
+                addLog('Error toggle override: ' + error.message, 'error');
+            }
+        }
+
+        // Tambah log
+        function addLog(message, type = 'info') {
+            const logContainer = document.getElementById('logContainer');
+            const timestamp = new Date().toLocaleTimeString('id-ID');
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry ${type}`;
+            logEntry.textContent = `[${timestamp}] ${message}`;
+            
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+            
+            // Hapus log lama jika terlalu banyak
+            if (logContainer.children.length > 50) {
+                logContainer.removeChild(logContainer.firstChild);
+            }
+        }
+
+        // Auto-scroll log
+        const logContainer = document.getElementById('logContainer');
+        const observer = new MutationObserver(() => {
+            logContainer.scrollTop = logContainer.scrollHeight;
+        });
+        observer.observe(logContainer, { childList: true });
+    </script>
 </body>
 </html>
